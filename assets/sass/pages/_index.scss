@@ -1,0 +1,105 @@
+.header {
+    background: rgba(20, 20, 20, 0.5) !important;
+    backdrop-filter: blur(10px);
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    @include flexbox(flex, center);
+
+    &__logo img {
+        width: 160px;
+    }
+
+    &__wrapper {
+        @include flexbox;
+    }
+
+    &__navigation-list {
+        @include flexbox;
+        width: max-content;
+        margin: 0 auto;
+
+        font-weight: 400;
+
+        &__item {
+            & > a {
+                font-family: Roboto, sans-serif;
+                padding-right: 20px;
+                color: $color-body-text;
+                text-transform: uppercase;
+            }
+        }
+
+        &__wrapper {
+            flex-grow: 1;
+        }
+    }
+
+    &__actions {
+        @include flexbox;
+        & > li {
+            &:not(:last-child) {
+                margin-right: 18px;
+            }
+            a {
+                svg {
+                    animation: notify 1.5s ease infinite;
+                    fill: $color-body-text;
+                }
+            }
+        }
+
+        &--profile {
+            & > a {
+                & > img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+body {
+    height: 5000px;
+}
+
+main {
+    background: url(https://templates.iqonic.design/streamit/frontend/html/images/slider/slider1.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        background: linear-gradient(90deg, rgb(20, 20, 20) 0%, rgb(36, 36, 36) 35%, rgba(83, 100, 141, 0) 100%);
+        z-index: 1;
+    }
+}
+
+.movie-details {
+    position: relative;
+    z-index: 3;
+    &__logo {
+        border-left: 5px solid var(--iq-primary);
+        background: transparent linear-gradient(270deg, rgba(11, 1, 2, 0) 0%, rgba(255, 55, 65, 0.3) 100%);
+        padding: 10px 10px 10px 15px;
+        width: 255px;
+        position: relative;
+        overflow: hidden;
+
+        & > img {
+            width: 130px;
+        }
+    }
+}

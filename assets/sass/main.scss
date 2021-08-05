@@ -1,0 +1,15 @@
+@import "mixins";
+@import "variables";
+@import "typography";
+@import "base";
+@import "animation";
+@import "common";
+
+// Remix icon scss file import
+@import "remixicon";
+
+@import "helpers/reset_flickity";
+
+@import "components/accordion";
+
+@import "pages/index";
